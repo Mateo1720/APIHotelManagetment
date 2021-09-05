@@ -12,29 +12,41 @@ window.onload = function(){
 
             for (let i = 0; i < hoteles.length; i++) {
                 hotel = hoteles[i]
+                let hotelIndividual = document.createElement('div')
+                hotelIndividual.setAttribute('style','background-color:#ECE5E5; border-radius:20px; margin: 30px; padding:20px;')
                 let nombreHotel= document.createElement('h1')
+                nombreHotel.setAttribute('style', 'color: #FF5722; font-weight: bold; text-align: center; padding: 30px 10px 10px 10px;')
                 nombreHotel.innerText=hotel[3]
                 let descripcionHotel= document.createElement('p')
+                descripcionHotel.setAttribute('style', 'padding: 0px 50px; color:#3D5E73;')
                 descripcionHotel.innerText=hotel[5]
                 let direccionHotel= document.createElement('p')
+                direccionHotel.setAttribute('style', 'padding: 0px 50px; color: #FF5722; font-weight: bold;')
                 direccionHotel.innerText=hotel[7]
                 let telefonoHotel= document.createElement('p')
+                telefonoHotel.setAttribute('style', 'padding: 0px 50px; color: #FF5722;font-weight: bold;')
                 telefonoHotel.innerText=hotel[9]
                 let serviciosHotel= document.createElement('p')
+                serviciosHotel.setAttribute('style', 'padding: 0px 50px; color: #FF5722;font-weight: bold;')
                 serviciosHotel.innerText=hotel[11]
-                let paginaHotel= document.createElement('p')
-                paginaHotel.innerText=' Página web:'+hotel[13]
+                
                 let familiarHotel= document.createElement('p')
-                familiarHotel.innerText=hotel[15]
+                familiarHotel.setAttribute('style', 'padding: 0px 50px 30px 50px; color: #FF5722;font-weight: bold;')
+                familiarHotel.innerText='Familiar: '+hotel[15]
+                let paginaHotel= document.createElement('a')
+                paginaHotel.href = hotel[13]
+                paginaHotel.innerText='Visit website'
+                paginaHotel.setAttribute('style', 'padding: 10px 50px; color: #0367A6;font-weight: bold; text-decoration: underline;')
 
-                divBorder.appendChild(nombreHotel)
-                divBorder.appendChild(descripcionHotel)
-                divBorder.appendChild(direccionHotel)
-                divBorder.appendChild(telefonoHotel)
-                divBorder.appendChild(serviciosHotel)
-                divBorder.appendChild(paginaHotel)
-                divBorder.appendChild(familiarHotel)
-                contenedorHoteles.appendChild(divBorder)
+                hotelIndividual.appendChild(nombreHotel)
+                hotelIndividual.appendChild(descripcionHotel)
+                hotelIndividual.appendChild(direccionHotel)
+                hotelIndividual.appendChild(telefonoHotel)
+                hotelIndividual.appendChild(serviciosHotel)
+                
+                hotelIndividual.appendChild(familiarHotel)
+                hotelIndividual.appendChild(paginaHotel)
+                contenedorHoteles.appendChild(hotelIndividual)
 
             }
 
@@ -49,21 +61,29 @@ window.onload = function(){
             for (let i = 0; i < hoteles.length; i++) {
                 hotel = hoteles[i]
                 console.log()
+                let restauranteIndividual = document.createElement('div')
+                restauranteIndividual.setAttribute('style','background-color:#B4D9D9; border-radius:20px; margin: 30px; padding:20px;')
                 
                 let nombrerRestaurante= document.createElement('h1')
+                nombrerRestaurante.setAttribute('style', 'color: #0367A6; font-weight: bold; text-align: center; padding: 30px 10px 10px 10px;')
                 nombrerRestaurante.innerText=hotel[3]
                 let descripcionRestaurante= document.createElement('p')
+                descripcionRestaurante.setAttribute('style', 'padding: 0px 50px; color:#3D5E73;')
                 descripcionRestaurante.innerText=hotel[5]
+                let paginaWebRestaurante= document.createElement('a')
+                paginaWebRestaurante.href = hotel[9]
+                paginaWebRestaurante.innerText = "Visit website"
+                paginaWebRestaurante.setAttribute('style', 'padding: 0px 50px 30px 50px; color: #FF5722;font-weight: bold; text-decoration: underline;')
                 let direccionRestaurante= document.createElement('p')
+                direccionRestaurante.setAttribute('style', 'padding: 0px 50px; color: #0367A6;font-weight: bold;')
                 direccionRestaurante.innerText=hotel[7]
-                let paginaWebRestaurante= document.createElement('p')
-                paginaWebRestaurante.innerText=' Página web:'+hotel[9]
+                
 
-                divBorder.appendChild(nombrerRestaurante)
-                divBorder.appendChild(descripcionRestaurante)
-                divBorder.appendChild(direccionRestaurante)
-                divBorder.appendChild(paginaWebRestaurante)
-                contenedorHoteles.appendChild(divBorder)
+                restauranteIndividual.appendChild(nombrerRestaurante)
+                restauranteIndividual.appendChild(descripcionRestaurante)
+                restauranteIndividual.appendChild(direccionRestaurante)
+                restauranteIndividual.appendChild(paginaWebRestaurante)
+                contenedorHoteles.appendChild(restauranteIndividual)
 
             }
             //convertToCsv('hoteles.csv', hoteles)
